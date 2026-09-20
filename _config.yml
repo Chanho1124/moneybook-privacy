@@ -1,0 +1,9 @@
+# GitHub Pages 설정.
+#   Settings → Pages / Deploy from a branch / main / (root)
+# 로 켜져 있고, index.md 가 아래 주소로 서비스된다.
+#   https://chanho1124.github.io/moneybook-privacy/
+#
+# 테마가 없으면 마크다운이 원문 그대로 보인다 — 심사에 내는 주소라 읽히게 둔다.
+theme: jekyll-theme-minimal
+title: 내돈어디
+description: 개인정보처리방침
