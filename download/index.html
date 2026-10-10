@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>버는족족 — AI로 기록되는 가계부</title>
+<meta name="description" content="말하거나 적거나 찍으면 AI가 알아서 기록해요. 공유 가계부, 정산, 친구와 챌린지까지.">
+<!-- 카카오톡·문자에 링크를 붙이면 이 정보로 미리보기 카드가 뜬다 -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="버는족족">
+<meta property="og:title" content="버는족족 — AI로 기록되는 가계부">
+<meta property="og:description" content="말하거나 적거나 찍으면 AI가 알아서 기록해요. 공유 가계부, 정산, 친구와 챌린지까지.">
+<meta property="og:image" content="https://chanho1124.github.io/moneybook-privacy/download/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:url" content="https://chanho1124.github.io/moneybook-privacy/download/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<style>
+  :root {
+    --bg: #FFFFFF; --ink: #1A1A1A; --sub: #888888; --soft: #F5F5F5;
+    --line: #EEEEEE; --accent: #E8A598; --note-bg: #FFF4F1; --note-ink: #B0645A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141414; --ink: #F2F2F2; --sub: #A0A0A0; --soft: #222222;
+      --line: #2A2A2A; --accent: #E8A598; --note-bg: #2A1E1C; --note-ink: #E8A598;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    min-height: 100vh; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", sans-serif;
+    display: flex; align-items: center; justify-content: center; padding: 32px 16px;
+    word-break: keep-all;
+  }
+  main { width: 100%; max-width: 380px; text-align: center; }
+  .icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+  h1 { font-size: 28px; font-weight: 800; margin-top: 20px; letter-spacing: -.5px; }
+  .tag { font-size: 16px; color: var(--sub); margin-top: 6px; }
+  .points { list-style: none; padding: 0; margin: 28px 0 0; text-align: left;
+    background: var(--soft); border-radius: 18px; padding: 16px 18px; }
+  .points li { font-size: 14px; line-height: 1.6; padding: 4px 0; }
+  .btns { display: flex; flex-direction: column; gap: 10px; margin-top: 28px; }
+  .btn { display: flex; align-items: center; justify-content: center; gap: 10px;
+    height: 54px; border-radius: 14px; font-size: 16px; font-weight: 700; text-decoration: none; }
+  .btn svg { width: 22px; height: 22px; }
+  .ios { background: var(--ink); color: var(--bg); }
+  .android { background: var(--soft); color: var(--ink); border: 1px solid var(--line); }
+  .android.off { opacity: .45; pointer-events: none; }
+  .note { margin-top: 14px; font-size: 13px; line-height: 1.6; color: var(--note-ink);
+    background: var(--note-bg); border-radius: 12px; padding: 10px 12px; display: none; }
+  .foot { margin-top: 28px; font-size: 12px; color: var(--sub); }
+  .foot a { color: var(--sub); }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="icon.png" alt="버는족족 아이콘">
+  <h1>버는족족</h1>
+  <p class="tag">AI로 기록되는 가계부</p>
+
+  <ul class="points">
+    <li>🎙️ "점심 김밥 4천원" 한마디면 기록 끝</li>
+    <li>📸 영수증·카드 내역 사진도 알아서 정리</li>
+    <li>👫 같이 쓰는 돈은 공유 가계부로, 정산까지</li>
+    <li>🏆 친구와 이번 달 목표 챌린지</li>
+  </ul>
+
+  <div class="btns">
+    <a class="btn ios" id="ios" href="https://apps.apple.com/kr/app/id6814111617">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.2 1-4 2.5-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.5-1-2.5-4zM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4z"/></svg>
+      App Store에서 받기
+    </a>
+    <a class="btn android" id="android" href="https://play.google.com/store/apps/details?id=com.chanho.moneybook">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.3 13.3 12l-9.7 9.7c-.4-.2-.6-.6-.6-1.1V3.4c0-.5.2-.9.6-1.1zM14.7 13.4l2.4 2.4-11 6.3 8.6-8.7zm3.6-2.9 2.8 1.6c.8.5.8 1.4 0 1.9l-2.8 1.6-2.6-2.6 2.6-2.5zM6.1 1.9l11 6.3-2.4 2.4-8.6-8.7z"/></svg>
+      Google Play에서 받기
+    </a>
+  </div>
+  <p class="note" id="note">안드로이드 버전은 지금 테스트 중이에요. 곧 Play 스토어에 나와요!</p>
+
+  <p class="foot">
+    <a href="../">개인정보처리방침</a> · <a href="../support">고객지원</a>
+  </p>
+</main>
+<script>
+  // 안드로이드가 Play 스토어에 정식 출시되면 true 로 바꾼다.
+  // 그 전엔 Play 링크가 테스터에게만 열려서, 일반 사람에겐 "찾을 수 없음"이 뜬다.
+  var ANDROID_LIVE = false;
+
+  var ua = navigator.userAgent || '';
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && 'ontouchend' in document);
+  var isAndroid = /Android/i.test(ua);
+  // ?stay 를 붙이면 넘어가지 않고 이 페이지를 그대로 보여준다(확인용)
+  var stay = /[?&]stay\b/.test(location.search);
+
+  if (!ANDROID_LIVE) {
+    document.getElementById('android').classList.add('off');
+    if (isAndroid) document.getElementById('note').style.display = 'block';
+  }
+
+  // 링크를 누른 폰에 맞는 스토어로 바로 보낸다. 안 넘어가도 버튼이 남아 있다.
+  if (!stay) {
+    if (isIOS) location.replace(document.getElementById('ios').href);
+    else if (isAndroid && ANDROID_LIVE) location.replace(document.getElementById('android').href);
+  }
+</script>
+</body>
+</html>
