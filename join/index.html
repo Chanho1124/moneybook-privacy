@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>버는족족 초대</title>
+<meta name="description" content="링크를 누르면 버는족족 앱에서 바로 참여할 수 있어요.">
+<!-- 카톡 미리보기. 초대 코드(# 뒤)는 미리보기 서버로도 가지 않는다 -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="버는족족">
+<meta property="og:title" content="버는족족에 초대받았어요">
+<meta property="og:description" content="링크를 누르면 앱에서 바로 참여할 수 있어요.">
+<meta property="og:image" content="https://chanho1124.github.io/moneybook-privacy/download/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../download/icon.png">
+<link rel="apple-touch-icon" href="../download/icon.png">
+<style>
+  :root {
+    --bg: #FFFFFF; --ink: #1A1A1A; --sub: #888888; --soft: #F5F5F5;
+    --line: #EEEEEE; --note-bg: #FFF4F1; --note-ink: #B0645A; --ok: #4A9E7F;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141414; --ink: #F2F2F2; --sub: #A0A0A0; --soft: #222222;
+      --line: #2A2A2A; --note-bg: #2A1E1C; --note-ink: #E8A598; --ok: #7FD1AE;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    min-height: 100vh; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", sans-serif;
+    display: flex; align-items: center; justify-content: center; padding: 32px 16px;
+    word-break: keep-all;
+  }
+  main { width: 100%; max-width: 380px; text-align: center; }
+  .icon { width: 84px; height: 84px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+  h1 { font-size: 24px; font-weight: 800; margin-top: 18px; letter-spacing: -.4px; line-height: 1.35; }
+  .tag { font-size: 15px; color: var(--sub); margin-top: 8px; line-height: 1.5; }
+  .btn { display: flex; align-items: center; justify-content: center; width: 100%;
+    height: 54px; border-radius: 14px; font-size: 16px; font-weight: 800; text-decoration: none;
+    border: 0; cursor: pointer; font-family: inherit; }
+  .primary { background: var(--ink); color: var(--bg); margin-top: 28px; }
+  .ghost { background: var(--soft); color: var(--ink); margin-top: 10px; border: 1px solid var(--line); font-weight: 700; }
+  .code { margin-top: 18px; font-size: 12px; color: var(--sub); word-break: break-all;
+    background: var(--soft); border-radius: 10px; padding: 10px 12px; text-align: left; line-height: 1.5; }
+  .copied { color: var(--ok); font-size: 13px; margin-top: 8px; min-height: 18px; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 26px 0 18px; }
+  .q { font-size: 14px; font-weight: 700; }
+  .store { margin-top: 12px; height: 48px; font-size: 15px; }
+  .off { opacity: .45; pointer-events: none; }
+  .note { margin-top: 10px; font-size: 13px; line-height: 1.6; color: var(--note-ink);
+    background: var(--note-bg); border-radius: 12px; padding: 10px 12px; display: none; }
+  .err { display: none; }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="../download/icon.png" alt="버는족족 아이콘">
+  <div id="ok">
+    <h1 id="title">공유 가계부에 초대받았어요</h1>
+    <p class="tag">아래 버튼을 누르면 버는족족 앱이 열리고<br>초대 코드가 자동으로 들어가요.</p>
+
+    <a class="btn primary" id="open" href="#">앱에서 열고 참여하기</a>
+    <button class="btn ghost" id="copy" type="button">초대 코드 복사</button>
+    <p class="copied" id="copied"></p>
+    <p class="code" id="code"></p>
+
+    <hr>
+    <p class="q">아직 앱이 없나요?</p>
+    <a class="btn ghost store" id="ios" href="https://apps.apple.com/kr/app/id6814111617">App Store에서 받기</a>
+    <a class="btn ghost store" id="android" href="https://play.google.com/store/apps/details?id=com.chanho.moneybook">Google Play에서 받기</a>
+    <p class="note" id="note">안드로이드 버전은 지금 테스트 중이에요. 곧 Play 스토어에 나와요!</p>
+    <p class="tag" style="margin-top:14px;font-size:13px">설치한 뒤 이 링크를 다시 누르면 바로 참여돼요.</p>
+  </div>
+  <div class="err" id="err">
+    <h1>초대 코드가 없어요</h1>
+    <p class="tag">받은 메시지의 링크를 통째로 다시 눌러주세요.</p>
+    <a class="btn primary" href="../download/">버는족족 받기</a>
+  </div>
+</main>
+<script>
+  // 안드로이드가 Play 스토어에 정식 출시되면 true 로 (download/index.html 과 같이 바꾼다)
+  var ANDROID_LIVE = false;
+
+  // 초대 코드는 # 뒤에 있다. 이 부분은 브라우저가 서버로 보내지 않는다.
+  var invite = decodeURIComponent((location.hash || '').slice(1)).trim();
+  var isChallenge = /[?&]c\b/.test(location.search);
+  var ua = navigator.userAgent || '';
+  var isAndroid = /Android/i.test(ua);
+
+  if (!/^[A-Za-z0-9]{4,12}(-[0-9a-fA-F]{32})?$/.test(invite)) {
+    document.getElementById('ok').style.display = 'none';
+    document.getElementById('err').style.display = 'block';
+  } else {
+    if (isChallenge) document.getElementById('title').textContent = '친구 챌린지에 초대받았어요';
+    var appUrl = 'moneybook://join/' + (isChallenge ? 'challenge' : 'room') + '#' + invite;
+    document.getElementById('open').href = appUrl;
+    document.getElementById('code').textContent = invite;
+
+    document.getElementById('copy').addEventListener('click', function () {
+      var done = function () { document.getElementById('copied').textContent = '복사했어요. 앱에서 붙여넣기만 하면 돼요.'; };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(invite).then(done, function () { selectCode(); });
+      } else {
+        selectCode();
+      }
+    });
+  }
+
+  function selectCode() {
+    var el = document.getElementById('code');
+    var r = document.createRange(); r.selectNodeContents(el);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    try { document.execCommand('copy'); document.getElementById('copied').textContent = '복사했어요.'; }
+    catch (e) { document.getElementById('copied').textContent = '코드를 길게 눌러 복사해주세요.'; }
+  }
+
+  if (!ANDROID_LIVE) {
+    document.getElementById('android').classList.add('off');
+    if (isAndroid) document.getElementById('note').style.display = 'block';
+  }
+</script>
+</body>
+</html>
