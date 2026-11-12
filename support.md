@@ -8,7 +8,7 @@ title: 고객지원 · 버는족족
 말하면 기록되는 AI 가계부입니다. 문제가 있거나 궁금한 점이 있으면
 아래 내용을 먼저 확인해 주세요.
 
-**문의: [coldpumpkinn@gmail.com](mailto:coldpumpkinn@gmail.com)**
+**문의: [bnjokjok@gmail.com](mailto:bnjokjok@gmail.com)**
 
 ---
 
@@ -77,6 +77,6 @@ title: 고객지원 · 버는족족
 위에서 해결되지 않으면 아래로 연락 주세요. 사용 중인 기기와 iOS 버전,
 그리고 어떤 화면에서 무엇을 하다 생긴 문제인지 알려주시면 빠르게 확인할 수 있습니다.
 
-**[coldpumpkinn@gmail.com](mailto:coldpumpkinn@gmail.com)**
+**[bnjokjok@gmail.com](mailto:bnjokjok@gmail.com)**
 
 [개인정보처리방침](./)

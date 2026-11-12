@@ -28,7 +28,7 @@ title: 계정 삭제 · 버는족족
 
 앱을 지웠거나 기기를 잃어버려 앱에서 탈퇴할 수 없다면 아래로 요청해 주세요.
 
-- 받는 곳: **[coldpumpkinn@gmail.com](mailto:coldpumpkinn@gmail.com)**
+- 받는 곳: **[bnjokjok@gmail.com](mailto:bnjokjok@gmail.com)**
 - 제목: `버는족족 계정 삭제 요청`
 - 내용: 로그인에 쓴 **Google 또는 Apple 계정의 이메일 주소**
 

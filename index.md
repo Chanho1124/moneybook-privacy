@@ -187,7 +187,7 @@ Gemini API로 전송되는 내용에는 **이메일이나 계정 식별자가 �
 
 개인정보 관련 문의는 아래로 연락해 주세요.
 
-- 이메일: **coldpumpkinn@gmail.com**
+- 이메일: **bnjokjok@gmail.com**
 
 ---
 
